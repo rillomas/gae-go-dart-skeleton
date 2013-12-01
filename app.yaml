@@ -1,0 +1,34 @@
+application: gae-go-dart-skeleton
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+# Handler for the main page
+- url: /
+  static_files : web/index.html
+  upload: web/index.html
+
+# Handlers to get rid of .dart file mime type warnings when uploading
+- url: /packages/(.*\.dart)
+  mime_type: application/dart
+  static_files: packages/\1
+  upload: packages/(.*\.dart)
+
+- url: /components/(.*\.dart)
+  mime_type: application/dart
+  static_files: web/components/\1
+  upload: web/components/(.*\.dart)
+
+# Handler for dart packages
+- url: /packages
+  static_dir: packages
+
+# Handler for my custom components
+- url: /components
+  static_dir: web/components
+
+# All other requests are handled by the Go code
+- url: /.*
+  script: _go_app
+
