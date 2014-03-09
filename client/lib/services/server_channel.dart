@@ -1,8 +1,4 @@
-import 'dart:async';
-import 'dart:html';
-import 'dart:convert' show JSON;
-import 'package:logging/logging.dart';
-import '../models/visitor_info.dart';
+part of services;
 
 /**
  * A class to wrap Async get requests

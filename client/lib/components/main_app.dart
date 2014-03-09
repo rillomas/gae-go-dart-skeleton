@@ -1,8 +1,10 @@
+library main_app;
+
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'package:logging/logging.dart';
-import 'services/server_channel.dart';
-import 'models/visitor_info.dart';
+import 'package:gae_go_dart_skeleton/services/services.dart';
+import 'package:gae_go_dart_skeleton/models/models.dart';
 
 @CustomTag("main-app")
 class MainApp extends PolymerElement {

@@ -1,3 +1,5 @@
+part of models;
+
 // Visitor information
 class VisitorInfo {
 	VisitorInfo(this.count);
