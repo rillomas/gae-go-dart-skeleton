@@ -8,31 +8,31 @@ import 'package:gae_go_dart_skeleton/models/models.dart';
 
 @CustomTag("main-app")
 class MainApp extends PolymerElement {
-	MainApp.created() : super.created() {
-		// Setup Logger
-		Logger.root.level = Level.INFO;
-		Logger.root.onRecord.listen((log) {
-			print(log);
-		});
+  MainApp.created(): super.created() {
+    // Setup Logger
+    Logger.root.level = Level.INFO;
+    Logger.root.onRecord.listen((log) {
+      print(log);
+    });
 
-		visitorInfo = new VisitorInfo(0);
-	}
+    visitorInfo = new VisitorInfo(0);
+  }
 
-	@observable
-	VisitorInfo visitorInfo;
+  @observable
+  VisitorInfo visitorInfo;
 
-	@override
-	void enteredView() {
-		super.enteredView();
+  @override
+  void enteredView() {
+    super.enteredView();
 
-		var domain = ServerChannel.generateRootDomain(window.location);
-		ServerChannel.getVisitorInfo(domain).then((info) {
-			info.count++;
-			visitorInfo = info;
+    var domain = ServerChannel.generateRootDomain(window.location);
+    ServerChannel.getVisitorInfo(domain).then((info) {
+      info.count++;
+      visitorInfo = info;
 
-			// update the visitor info on the server side
-			ServerChannel.sendVisitorInfo(info, domain);
-		});
+      // update the visitor info on the server side
+      ServerChannel.sendVisitorInfo(info, domain);
+    });
 
-	}
+  }
 }

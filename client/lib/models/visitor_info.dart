@@ -2,16 +2,16 @@ part of models;
 
 // Visitor information
 class VisitorInfo {
-	VisitorInfo(this.count);
-	VisitorInfo.fromJson(Map map) {
-		count = map[countTag];
-	}
+  VisitorInfo(this.count);
+  VisitorInfo.fromJson(Map map) {
+    count = map[countTag];
+  }
 
-	int count;
+  int count;
 
-	dynamic toJson() => { 
-		countTag: count
-	};
+  dynamic toJson() => {
+    countTag: count
+  };
 
-	static const string countTag = "Count";
+  static const string countTag = "Count";
 }
