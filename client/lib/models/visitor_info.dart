@@ -13,5 +13,5 @@ class VisitorInfo {
     countTag: count
   };
 
-  static const string countTag = "Count";
+  static const String countTag = "Count";
 }

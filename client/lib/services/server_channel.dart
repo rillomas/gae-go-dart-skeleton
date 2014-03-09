@@ -54,7 +54,7 @@ class ServerChannel {
     return "${location.protocol}//${location.host}/";
   }
 
-  static const string visitorInfoApiPath = "api/1/visitorInfo";
+  static const String visitorInfoApiPath = "api/1/visitorInfo";
 }
 
 
