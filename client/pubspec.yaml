@@ -2,3 +2,6 @@ name: gae_go_dart_skeleton
 dependencies:
   logging: any
   polymer: any
+transformers:
+- polymer:
+    entry_points: web/index.html
