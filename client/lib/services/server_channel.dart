@@ -25,7 +25,7 @@ class ServerChannel {
   static Future<VisitorInfo> getVisitorInfo(String domain) {
     var url = "${domain}${visitorInfoApiPath}";
     Logger.root.info("getting from ${url}");
-    var task = new AsyncGet<int>();
+    var task = new AsyncGet<VisitorInfo>();
     var f = task.request(url, (res) {
       Logger.root.info("response: $res");
       int count = -1;
