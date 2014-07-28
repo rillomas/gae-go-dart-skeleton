@@ -22,8 +22,8 @@ class MainApp extends PolymerElement {
   VisitorInfo visitorInfo;
 
   @override
-  void enteredView() {
-    super.enteredView();
+  void attached() {
+    super.attached();
 
     var domain = ServerChannel.generateRootDomain(window.location);
     ServerChannel.getVisitorInfo(domain).then((info) {
