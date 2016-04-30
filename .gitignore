@@ -1,3 +1,4 @@
-client/build
 packages
-
+src/web/build
+*.packages
+*.pub
